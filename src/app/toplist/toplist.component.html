@@ -1,0 +1,9 @@
+<p>This is the Toplist component!</p>
+
+<img class="img-center" style="width:60%; max-width: 300px;" src="assets/octopus.svg" />
+{{datastore.user.name}}!
+
+<h2>Top users</h2>
+<div *ngFor="let topUser of datastore.toplist" class="toplistCard">
+    <h4>{{topUser.name}} -  {{topUser.healthScore}}</h4>
+</div>
