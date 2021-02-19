@@ -12,7 +12,7 @@ export class DatastoreService {
 
         this.user = {
             id: 'asd213bde',
-            name: 'Árvíztűrő Tükörfúró Béla'
-        };
+            name: 'Árvíztűrő Tükörfúró Béla',
+        } as any;
     }
 }

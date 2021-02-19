@@ -19,3 +19,7 @@ npm: <https://www.npmjs.com/get-npm>
 ```ng serve```
 
 Open <http://localhost:4200/> in browser.
+
+
+## Attributions
+

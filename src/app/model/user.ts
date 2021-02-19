@@ -2,6 +2,7 @@ import { Achievement } from "./achievement";
 import { Disease } from "./disease";
 import { PastScreening } from "./pastScreening";
 import { Screening } from "./screening";
+import { Sex } from './sex';
 import { SuggestedScreening } from "./suggestedScreening";
 
 export interface User {
