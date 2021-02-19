@@ -4,5 +4,5 @@ export interface Screening {
     id: string;
     name: string;
     screeningInfo: string;
-    locations: ScreeningLocation[];
+    locations?: ScreeningLocation[];
 }
