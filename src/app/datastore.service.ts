@@ -8,7 +8,6 @@ export class DatastoreService {
 
     user: User;
     users: User[];
-    toplist: User[];
 
     constructor() {
 
@@ -16,7 +15,8 @@ export class DatastoreService {
             {
                 id: 'asd213bde',
                 name: 'Árvíztűrő Tükörfúró Béla',
-                healthScore: 10,
+                healthScore: 4,
+                friendIDs: ['friendid1', 'friendid2'],
                 suggestedScreenings: [
                     {
                         screening: {
@@ -52,10 +52,11 @@ export class DatastoreService {
                         }
                     }
                 ]
-            } as any,{
+            } as any,
+            {
                 id: 'asd567bde',
                 name: 'Árvíztűrő Tükörfúró Jani',
-                healthScore: 1,
+                healthScore: 5,
                 suggestedScreenings: [
                     {
                         screening: {
@@ -71,10 +72,19 @@ export class DatastoreService {
                         }
                     }
                 ]
+            } as any,
+            {
+                id: 'friendid1',
+                name: 'Joshi Bharat',
+                healthScore: 1,
+            } as any,
+            {
+                id: 'friendid2',
+                name: 'Józsi Bharat',
+                healthScore: 2,
             } as any
         ];
 
         this.user = this.users[0];
-        this.toplist = this.users.sort((a,b) => b.healthScore - a.healthScore);
     }
 }

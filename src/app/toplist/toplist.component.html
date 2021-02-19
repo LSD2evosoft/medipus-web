@@ -1,9 +1,20 @@
 <p>This is the Toplist component!</p>
 
-<img class="img-center" style="width:60%; max-width: 300px;" src="assets/octopus.svg" />
-{{datastore.user.name}}!
+<button class="btn btn-primary" (click) = "getToplist(true)">Global</button>
+<button class="btn btn-primary" (click) = "getToplist(false)">Friends</button>
 
-<h2>Top users</h2>
-<div *ngFor="let topUser of datastore.toplist" class="toplistCard">
-    <h4>{{topUser.name}} -  {{topUser.healthScore}}</h4>
+<div *ngIf="isGlobal; else friendList">
+    <h2>Top users</h2>
+</div>
+<ng-template #friendList>
+    <h2>Top friends</h2>
+</ng-template>
+
+<div *ngFor="let topUser of topList" class="toplistCard">
+    <div *ngIf="topUser[0].id == this.datastore.user.id; else others">
+        <h4 class="text-primary">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h4>
+    </div>
+    <ng-template #others>
+        <h4>{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h4>
+    </ng-template>
 </div>
