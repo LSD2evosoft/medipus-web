@@ -13,7 +13,7 @@ export interface User {
     profilePicture: ImageBitmap;
     pastScreenings: PastScreening[];
     watchedScreening: Screening[];
-    suggestedScreening: SuggestedScreening[];
+    suggestedScreenings: SuggestedScreening[];
     dateOfBirth: Date;
     sex: Sex;
     weight: number;

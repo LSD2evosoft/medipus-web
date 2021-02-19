@@ -1,10 +1,13 @@
 <p>This is the Profile component!</p>
 
-<img class="img-center" style="width:20%" src="assets/octopus.svg" />
+<img class="img-center" style="width:60%; max-width: 300px;" src="assets/octopus.svg" />
 {{datastore.user.name}}!
 
-<h2>Due</h2>
+<h2>Suggested screenings</h2>
+<div *ngFor="let screening of datastore.user.suggestedScreenings" class="screeningCard">
+    <h4>{{screening.screening.id}} - {{screening.screening.name}}</h4>
+    <p>
+        {{screening.screening.screeningInfo}}
+    </p>
 
-<h2>Soon</h2>
-
-<h2>Recommended</h2>
+</div>
