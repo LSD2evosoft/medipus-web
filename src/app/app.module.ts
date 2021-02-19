@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ToplistComponent } from './toplist/toplist.component';
+import { FriendsComponent } from './friends/friends.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -17,7 +18,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
         AppComponent,
         HomeComponent,
         ProfileComponent,
-        ToplistComponent
+        ToplistComponent,
+        FriendsComponent
     ],
     imports: [
         BrowserModule,
