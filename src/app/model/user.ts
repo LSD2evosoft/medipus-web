@@ -6,22 +6,31 @@ import { Sex } from './sex';
 import { SuggestedScreening } from "./suggestedScreening";
 
 export interface User {
+    // Login related
     id: string;
     name: string;
     userName: string;
     email: string;
-    profilePicture: ImageBitmap;
-    pastScreenings: PastScreening[];
-    watchedScreening: Screening[];
-    suggestedScreenings: SuggestedScreening[];
-    dateOfBirth: Date;
-    sex: Sex;
-    weight: number;
-    height: number;
-    friendIDs: string[];
-    healthScore: number;
-    achievements: Achievement[];
-    inheritedDiseases: Disease[];
-    facebookConnection: any;
-    googleConnection: any;
+    facebookConnection?: any;
+    googleConnection?: any;
+
+    // Simple personal data
+    dateOfBirth?: Date;
+    sex?: Sex;
+    weight?: number;
+    height?: number;
+    profilePictureUrl?: string;
+
+    // Advanced personal data
+    pastScreenings?: PastScreening[];
+    watchedScreening?: Screening[];
+    inheritedDiseases?: Disease[];
+
+    // Calculated
+    suggestedScreenings?: SuggestedScreening[];
+    healthScore?: number;
+    achievements?: Achievement[];
+
+    // Other
+    friendIDs?: string[];
 }
