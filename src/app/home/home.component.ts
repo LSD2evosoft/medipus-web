@@ -4,6 +4,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Screening } from '../model/screening';
 import { SuggestedScreening } from '../model/suggestedScreening';
 import { formatDistance } from 'date-fns';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 @Component({
     selector: 'app-home',
@@ -13,7 +14,6 @@ import { formatDistance } from 'date-fns';
 export class HomeComponent implements OnInit {
 
     constructor(public datastore: DatastoreService, private modalService: BsModalService) { }
-    myDate = new Date();
 
     helpers = {formatDistance}
     modalRef: BsModalRef;

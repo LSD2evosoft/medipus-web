@@ -19,6 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ScreeningsComponent } from './screenings/screenings.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
         BsDatepickerModule.forRoot(),
         TooltipModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ModalModule.forRoot()
+        ModalModule.forRoot(),
+        ProgressbarModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]
