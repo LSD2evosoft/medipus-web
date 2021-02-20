@@ -40,6 +40,25 @@ export class DatastoreService {
 
         this.users = [
             {
+                id: '3d9f166b-276c-4f34-8c35-8632439e83ee',
+                name: 'Lilla Juhász',
+                userName: 'lilla',
+                email: 'lilla@email.hu',
+                healthScore: 95,
+                friendIDs: ['e041da87-6d66-4deb-b6cd-d2473cc86a06', 'c75c36f7-8c5c-4095-b1ed-292b2f16a225'],
+                receivedRequests: ['7aa37440-6b02-425f-be1c-b56f661aaacc'],
+                suggestedScreenings: [
+                    {
+                        id: '72f68663-9558-4d18-a395-c9c137f983a0',
+                        screening: this.screenings[1],
+                        date: new Date('2021-03-15')
+                    }, {
+                        id: 'fefe0587-4eb1-4454-827f-bee2fd055649',
+                        screening: this.screenings[3],
+                        date: new Date('2021-05')
+                    }
+                ]
+            }, {
                 id: '2d9f166b-276c-4f34-8c35-8632439e83ee',
                 name: 'Árvíztűrő Tükörfúró Béla',
                 userName: 'bela',

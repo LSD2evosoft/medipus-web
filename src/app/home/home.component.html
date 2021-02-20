@@ -1,7 +1,7 @@
 <div class="row mt-4 d-flex">
     <div class="col-6 m-auto">
         <div class="avatar" routerLink="/profile">
-            <img class="avatar__img" src="https://www.mindmegette.hu/images/143/O/crop_201603091554_hamburger.jpg" />
+            <img class="avatar__img" src="/assets/lilla.jpg" />
         </div>
     </div>
     <div class="col-12 m-auto">
@@ -13,7 +13,9 @@
 
 <hr>
 
-<h3>Current screenings</h3>
+<div class="h3-1">
+    Current screenings
+</div>
 
 <ng-template #modalTemplate>
     <div class="modal-header">
@@ -47,11 +49,17 @@
             </div>
         </div>
     </div>
+    <div *ngIf="currentScreenings.length === 0 || currentScreenings == null" style="text-align: center;">
+        <p>Yay, you have no expired screenings!</p>
+        <img class="img-fluid" src="/assets/octopus.svg" />
+    </div>
 </div>
 
 <hr>
 
-<h3>Next screenings</h3>
+<div class="h3-1">
+    Next screenings
+</div>
 
 <div *ngFor="let nextScreening of nextScreenings">
     <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand" (click)="openModal(nextScreening.screening, modalTemplate)">
