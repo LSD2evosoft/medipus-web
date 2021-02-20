@@ -22,6 +22,7 @@ export class DatastoreService {
                 email: 'bela@tukorfuro.hu',
                 healthScore: 4,
                 friendIDs: ['e041da87-6d66-4deb-b6cd-d2473cc86a06', 'c75c36f7-8c5c-4095-b1ed-292b2f16a225'],
+                receivedRequests: ['7aa37440-6b02-425f-be1c-b56f661aaacc'],
                 suggestedScreenings: [
                     {
                         id: '72f68663-9558-4d18-a395-c9c137f983a0',
@@ -97,7 +98,14 @@ export class DatastoreService {
                 userName: "jozsi",
                 email: 'jozsi@tukorfuro.hu',
                 healthScore: 2,
-            } as any
+            }, {
+                id: '7aa37440-6b02-425f-be1c-b56f661aaacc',
+                name: 'Pista Bharat',
+                userName: "pista",
+                email: 'pista@tukorfuro.hu',
+                healthScore: 3,
+                sentRequests: ['2d9f166b-276c-4f34-8c35-8632439e83ee']
+            }
         ];
 
         this.user = this.users[0];

@@ -6,7 +6,15 @@
     <button class="btn btn-primary" (click)="addFriend()">Add friend</button>
 </div>
 <h2>Your friends</h2>
-<div *ngFor="let friend of friends">
-    <div>{{friend.name}}<button class="btn btn-primary" (click)="removeFriend(friend.id)">Remove</button></div>
+<div *ngFor="let friend of getFriends()">
+    <div>{{friend.name}}
+        <button class="btn btn-primary" (click)="removeFriend(friend.id)">Remove</button>
+    </div>
 </div>
 <h2>Friend requests</h2>
+<div *ngFor="let request of getFriendRequests()">
+    <div>{{request.name}}
+        <button class="btn btn-primary" (click)="approveRequest(request.id)">Approve</button>
+        <button class="btn btn-primary" (click)="denyRequest(request.id)">Deny</button>
+    </div>
+</div>

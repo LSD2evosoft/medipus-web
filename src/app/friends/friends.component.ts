@@ -21,18 +21,6 @@ export class FriendsComponent implements OnInit {
         this.friends = this.getFriends();
     }
 
-    addFriend(): void {
-        let friend = this.friends.filter((item) => item.userName == this.newFriendUserName || item.email == this.newFriendUserName)[0];
-
-        if(friend == undefined) {
-            friend = this.datastore.users.filter((item) => item.userName == this.newFriendUserName || item.email == this.newFriendUserName)[0];
-            if(friend != undefined && confirm('Are you sure you want to add ' + friend.name + ' to your friends?')) {
-                this.user.friendIDs.push(friend.id);
-                this.friends = this.getFriends();
-            }
-        }
-    }
-
     getFriends(): User[] {
         let friends: User[] = [];
         for (let friendId of this.user.friendIDs) {
@@ -45,6 +33,19 @@ export class FriendsComponent implements OnInit {
 
         return friends.sort((a,b) => a.name.localeCompare(b.name));
     }
+
+    getFriendRequests(): User[] {
+        let requests: User[] = [];
+        for (let requestId of this.user.receivedRequests) {
+            for (let user of this.datastore.users) {
+                if(requestId == user.id) {
+                    requests.push(user);
+                }
+            }
+        }
+
+        return requests.sort((a,b) => a.name.localeCompare(b.name));
+    }
     
     removeFriend(id: string): void {
         let friend = this.friends.filter((item) => item.id == id)[0];
@@ -54,4 +55,24 @@ export class FriendsComponent implements OnInit {
         }
     }
 
+    addFriend(): void {
+        let friend = this.friends.filter((item) => item.userName == this.newFriendUserName || item.email == this.newFriendUserName)[0];
+
+        if(friend == undefined) {
+            friend = this.datastore.users.filter((item) => item.userName == this.newFriendUserName || item.email == this.newFriendUserName)[0];
+            if(friend != undefined && confirm('Are you sure you want to add ' + friend.name + ' to your friends?')) {
+                this.user.friendIDs.push(friend.id);
+                this.friends = this.getFriends();
+            }
+        }
+    }
+
+    approveRequest(id: string): void {
+        this.user.receivedRequests = this.user.receivedRequests.filter(item => item != id);
+        this.user.friendIDs.push(id);
+    }
+
+    denyRequest(id: string): void {
+        this.user.receivedRequests = this.user.receivedRequests.filter(item => item != id);
+    }
 }

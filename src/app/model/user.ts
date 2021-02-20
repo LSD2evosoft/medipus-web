@@ -33,4 +33,6 @@ export interface User {
 
     // Other
     friendIDs?: string[];
+    sentRequests?: string[];
+    receivedRequests?: string[];
 }
