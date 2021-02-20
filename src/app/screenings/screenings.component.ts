@@ -16,7 +16,9 @@ export class ScreeningsComponent implements OnInit {
     modalScreening: Screening;
 
     get screenings(): Screening[] {
-        return this.datastore.screenings.filter(x => this.selected === '' || x.name.toLowerCase().indexOf(this.selected.toLowerCase()) >= 0);
+        return this.datastore.screenings
+            .filter(x => this.selected === '' || x.name.toLowerCase().indexOf(this.selected.toLowerCase()) >= 0)
+            .sort((a, b) => a.name.localeCompare(b.name));
     }
 
     constructor(
