@@ -10,6 +10,7 @@
         </h4>
     </div>
 </div>
+<br><br>
 
 <hr>
 
@@ -25,7 +26,7 @@
                     alt="Card image cap">
                 <div class="card-body" *ngFor="let expiredScreening of expiredScreenings">
                     <h5 class="card-title">{{screening.screening.name}}</h5>
-                    <p class="card-text">Expired on: {{myDate | date:'yyyy-MM-dd'}} - {{expiredScreening.date | date:'yyyy-MM-dd'}}</p>
+                    <p class="card-text">Expired on: {{myYear - expiredScreening.date.getFullYear()}}</p>
                     <button type="button" class="btn btn-primary" (click)="openModal(expiredScreening.screening, template)">Details</button>
                 </div>
                 <ng-template #template>
@@ -40,6 +41,7 @@
                             src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
                             alt="Card image cap">
                         {{screening.screening.screeningInfo}}
+                        <button></button>
                     </div>
                 </ng-template>
             </div>

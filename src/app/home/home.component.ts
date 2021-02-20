@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
     constructor(public datastore: DatastoreService, private modalService: BsModalService) { }
     myDate = new Date();
+    myYear = new Date().getFullYear();
 
     modalRef: BsModalRef;
     expiredScreenings: SuggestedScreening[];
