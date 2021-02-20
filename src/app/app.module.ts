@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ToplistComponent } from './toplist/toplist.component';
+import { AchievementComponent } from './achievements/achievements.component';
+import { BasicInfoComponent } from './basicinfo/basicinfo.component';
 import { FriendsComponent } from './friends/friends.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +17,6 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { BasicInfoComponent } from './basicinfo/basicinfo.component';
 import { ScreeningsComponent } from './screenings/screenings.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
@@ -25,6 +26,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
         HomeComponent,
         ProfileComponent,
         ToplistComponent,
+        AchievementComponent,
         FriendsComponent,
         BasicInfoComponent,
         ScreeningsComponent
