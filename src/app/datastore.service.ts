@@ -21,7 +21,8 @@ export class DatastoreService {
         }, {
             id: "screening2",
             name: "Breast cancer screening",
-            screeningInfo: "You will stand in front of a special X-ray machine. A technologist will place your breast on a plastic plate. Another plate will firmly press your breast from above. The plates will flatten the breast, holding it still while the X-ray is being taken. You will feel some pressure. The steps are repeated to make a side view of the breast. The other breast will be X-rayed in the same way. You will then wait while the technologist checks the four X-rays to make sure the pictures do not need to be re-done."
+            screeningInfo: "You will stand in front of a special X-ray machine. A technologist will place your breast on a plastic plate. Another plate will firmly press your breast from above. The plates will flatten the breast, holding it still while the X-ray is being taken. You will feel some pressure. The steps are repeated to make a side view of the breast. The other breast will be X-rayed in the same way. You will then wait while the technologist checks the four X-rays to make sure the pictures do not need to be re-done.",
+            image: "https://media.istockphoto.com/photos/solving-womens-health-issues-picture-id1128870494?k=6&m=1128870494&s=612x612&w=0&h=Ci26BQ_br0kC_lNCimXk_wtQvvwNgRH4JfrZNyJch6Q="
         }, {
             id: "screening3",
             name: "Lung screening",
@@ -33,7 +34,8 @@ export class DatastoreService {
         }, {
             id: "screening5",
             name: "Cholesterol check",
-            screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test."
+            screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test.",
+            image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/GettyImages-1167819581.jpg"
         }];
 
         this.users = [
@@ -43,7 +45,7 @@ export class DatastoreService {
                 userName: 'lilla',
                 email: 'lilla@email.hu',
                 healthScore: 95,
-                friendIDs: ['e041da87-6d66-4deb-b6cd-d2473cc86a06', 'c75c36f7-8c5c-4095-b1ed-292b2f16a225'],
+                friendIDs: ['31c4e479-b825-4f80-abe8-89ce3c189f1e'],
                 receivedRequests: ['7aa37440-6b02-425f-be1c-b56f661aaacc'],
                 suggestedScreenings: [
                     {
@@ -128,6 +130,12 @@ export class DatastoreService {
                 email: 'pista@tukorfuro.hu',
                 healthScore: 3,
                 sentRequests: ['2d9f166b-276c-4f34-8c35-8632439e83ee']
+            }, {
+                id: '31c4e479-b825-4f80-abe8-89ce3c189f1e',
+                name: 'Soma Zsják',
+                userName: "soma",
+                email: 'soma@email.hu',
+                healthScore: 94
             }
         ];
 

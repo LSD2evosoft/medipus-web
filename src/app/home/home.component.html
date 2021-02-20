@@ -44,8 +44,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <img class="img-fluid" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-            alt="Card image cap">
+        <img class="img-fluid" alt="Card image cap" [src]="modalScreening.image">
         {{modalScreening.screeningInfo}}
         <hr>
         <div class="row">
@@ -62,8 +61,7 @@
 <div *ngFor="let currentScreening of currentScreenings">
     <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand" (click)="openModal(currentScreening.screening, modalTemplate)">
         <div class="card">
-            <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-                alt="Card image cap">
+            <img class="img-fluid" alt="Card image cap" [src]="currentScreening.screening.image">
             <div class="card-body">
                 <h5 class="card-title">{{currentScreening.screening.name}}</h5>
                 <p class="card-text">Due in: {{helpers.formatDistance(currentScreening.date, now)}}</p>
@@ -85,8 +83,7 @@
 <div *ngFor="let nextScreening of nextScreenings">
     <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand" (click)="openModal(nextScreening.screening, modalTemplate)">
         <div class="card">
-            <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-                alt="Card image cap">
+            <img class="card-img-top" alt="Card image cap" [src]="nextScreening.screening.image">
             <div class="card-body">
                 <h5 class="card-title">{{nextScreening.screening.name}}</h5>
                 <p class="card-text">Due in: {{helpers.formatDistance(now, nextScreening.date)}}</p>
@@ -99,9 +96,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class="img-fluid"
-                        src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-                        alt="Card image cap">
+                    <img class="img-fluid" alt="Card image cap" [src]="nextScreening.screening.image">
                     {{nextScreening.screening.screeningInfo}}
                 </div>
             </ng-template>
