@@ -60,7 +60,7 @@ export class FriendsComponent implements OnInit {
 
         if(friend == undefined) {
             friend = this.datastore.users.filter((item) => item.userName == this.newFriendUserName || item.email == this.newFriendUserName)[0];
-            if(friend != undefined && confirm('Are you sure you want to add ' + friend.name + ' to your friends?')) {
+            if(friend != undefined && confirm('Are you sure you want to add ' + this.newFriendUserName + ' to your friends?')) {
                 this.user.friendIDs.push(friend.id);
                 this.friends = this.getFriends();
             }
