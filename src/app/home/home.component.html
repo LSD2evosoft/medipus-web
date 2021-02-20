@@ -10,49 +10,34 @@
         </h4>
     </div>
 </div>
+
 <hr>
-<h3>
-    Expired screenings
-</h3>
-<div class="row">
-    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
-        <div class="card">
-            <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-                alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Cholesterol check</h5>
-                <p class="card-text">Expired: 6 month ago!</p>
-                <button type="button" class="btn btn-primary" (click)="openModal(template)">Details</button>
-            </div>
-        </div>
+
+<h3>Expired screenings</h3>
+
+<ng-template #modalTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{modalScreening.name}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
+    <div class="modal-body">
+        <img class="img-fluid" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
+            alt="Card image cap">
+        {{modalScreening.screeningInfo}}
+    </div>
+</ng-template>
 
-    <ng-template #template>
-        <div class="modal-header">
-            <h4 class="modal-title pull-left">Cholesterol check</h4>
-            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <img class="img-fluid" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-                alt="Card image cap">
-            High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP
-            might suggest having a test if they think your cholesterol level could be high. This may because of your
-            age, weight or another condition you have (like high blood pressure or diabetes).
-            There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test.
-        </div>
-    </ng-template>
-
+<div *ngFor="let expiredScreening of expiredScreenings">
     <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
         <div class="card">
             <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
                 alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">{{expiredScreening.screening.name}}</h5>
+                <p class="card-text">Expired: {{expiredScreening.date}}</p>
+                <button type="button" class="btn btn-primary" (click)="openModal(expiredScreening.screening, modalTemplate)">Details</button>
             </div>
         </div>
     </div>
@@ -60,19 +45,17 @@
 
 <hr>
 
-<h3>
-    Next screenings
-</h3>
-<div class="row">
-    <div class="col-md-3 col-sm-4 col-xs-6 mb-4">
+<h3>Next screenings</h3>
+
+<div *ngFor="let nextScreening of nextScreenings">
+    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
         <div class="card">
             <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
                 alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">{{nextScreening.screening}}</h5>
+                <p class="card-text">Due in: {{nextScreening.date}}</p>
+                <button type="button" class="btn btn-primary" (click)="openModal(nextScreening.screening, modalTemplate)">Details</button>
             </div>
         </div>
     </div>

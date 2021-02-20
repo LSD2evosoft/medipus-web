@@ -47,15 +47,17 @@ export class DatastoreService {
                         screening: {
                             id: "screening1",
                             name: "Prostate screening",
-                            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   ",
+                            screeningInfo: "Screening for prostate cancer is done to find evidence of cancer in otherwise healthy adults. Two tests are commonly used to screen for prostate cancer: Digital rectal examination (DRE). A DRE is a test in which the doctor inserts a gloved, lubricated finger into the rectum and feels the surface of the prostate through the bowel wall for any irregularities. PSA blood test. There is controversy about using the PSA test to look for prostate cancer in people with no symptoms of the disease. On the one hand, the PSA test is useful for detecting early-stage prostate cancer."
                         },
+                        date: new Date('2020-05')
                     }, {
                         id: 'fefe0587-4eb1-4454-827f-bee2fd055649',
                         screening: {
                             id: "screening2",
                             name: "Breast cancer screening",
-                            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
-                        }
+                            screeningInfo: "You will stand in front of a special X-ray machine. A technologist will place your breast on a plastic plate. Another plate will firmly press your breast from above. The plates will flatten the breast, holding it still while the X-ray is being taken. You will feel some pressure. The steps are repeated to make a side view of the breast. The other breast will be X-rayed in the same way. You will then wait while the technologist checks the four X-rays to make sure the pictures do not need to be re-done."
+                        },
+                        date: new Date('2021-03')
                     }
                 ]
             }, {
