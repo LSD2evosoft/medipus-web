@@ -10,12 +10,11 @@
         </h4>
     </div>
 </div>
-<br><br>
 
 <hr>
 
 <div class="h3-1">
-    Expired screenings
+    Current screenings
 </div>
 
 <ng-template #modalTemplate>
@@ -29,22 +28,30 @@
         <img class="img-fluid" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
             alt="Card image cap">
         {{modalScreening.screeningInfo}}
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-primary btn-block">Navigate</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-primary btn-block">Check in</button>
+            </div>
+        </div>
     </div>
 </ng-template>
 
-<div *ngFor="let expiredScreening of expiredScreenings">
-    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
+<div *ngFor="let currentScreening of currentScreenings">
+    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand" (click)="openModal(currentScreening.screening, modalTemplate)">
         <div class="card">
             <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
                 alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{expiredScreening.screening.name}}</h5>
-                <p class="card-text">Expired: {{helpers.formatDistance(expiredScreening.date, now)}} ago</p>
-                <button type="button" class="btn btn-primary" (click)="openModal(expiredScreening.screening, modalTemplate)">Details</button>
+                <h5 class="card-title">{{currentScreening.screening.name}}</h5>
+                <p class="card-text">Due in: {{helpers.formatDistance(currentScreening.date, now)}}</p>
             </div>
         </div>
     </div>
-    <div *ngIf="expiredScreenings.length === 0 || expiredScreenings == null" style="text-align: center;">
+    <div *ngIf="currentScreenings.length === 0 || currentScreenings == null" style="text-align: center;">
         <p>Yay, you have no expired screenings!</p>
         <img class="img-fluid" src="/assets/octopus.svg" />
     </div>
@@ -57,14 +64,13 @@
 </div>
 
 <div *ngFor="let nextScreening of nextScreenings">
-    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
+    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand" (click)="openModal(nextScreening.screening, modalTemplate)">
         <div class="card">
             <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{nextScreening.screening.name}}</h5>
                 <p class="card-text">Due in: {{helpers.formatDistance(now, nextScreening.date)}}</p>
-                <button type="button" class="btn btn-primary" (click)="openModal(nextScreening.screening, modalTemplate)">Details</button>
             </div>
             <ng-template #template>
                 <div class="modal-header">

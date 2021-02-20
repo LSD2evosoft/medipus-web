@@ -14,12 +14,13 @@ export class HomeComponent implements OnInit {
 
     constructor(public datastore: DatastoreService, private modalService: BsModalService) { }
     myDate = new Date();
-    myYear = new Date().getFullYear();
 
     helpers = {formatDistance}
     modalRef: BsModalRef;
-    expiredScreenings: SuggestedScreening[];
+    currentScreenings: SuggestedScreening[];
     nextScreenings: SuggestedScreening[];
+    nextScreenings2: SuggestedScreening[];
+    expiredScreenings: SuggestedScreening[];
     modalScreening: Screening;
     now: Date;
    
@@ -31,6 +32,8 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
       this.now = new Date();
       this.expiredScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date < this.now) ?? null;
-      this.nextScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date >= this.now);
+      this.nextScreenings2 = this.datastore.user.suggestedScreenings.filter(item => item.date >= this.now);
+      this.currentScreenings = [this.datastore.user.suggestedScreenings[0]];
+      this.nextScreenings = [this.datastore.user.suggestedScreenings[1]];
     }
 }

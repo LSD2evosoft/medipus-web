@@ -30,6 +30,10 @@ export class DatastoreService {
             id: "screening4",
             name: "Diabetes screening",
             screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
+        }, {
+            id: "screening5",
+            name: "Cholesterol check",
+            screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test."
         }];
 
         this.users = [
@@ -63,12 +67,12 @@ export class DatastoreService {
                 suggestedScreenings: [
                     {
                         id: '72f68663-9558-4d18-a395-c9c137f983a0',
-                        screening: this.screenings[0],
-                        date: new Date('2020-05')
-                    }, {
-                        id: 'fefe0587-4eb1-4454-827f-bee2fd055649',
                         screening: this.screenings[1],
                         date: new Date('2021-03')
+                    }, {
+                        id: 'fefe0587-4eb1-4454-827f-bee2fd055649',
+                        screening: this.screenings[4],
+                        date: new Date('2021-07')
                     }
                 ]
             }, {
