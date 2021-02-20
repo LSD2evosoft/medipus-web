@@ -12,6 +12,7 @@ import { SuggestedScreening } from '../model/suggestedScreening';
 export class HomeComponent implements OnInit {
 
     constructor(public datastore: DatastoreService, private modalService: BsModalService) { }
+    myDate = new Date();
 
     modalRef: BsModalRef;
     expiredScreenings: SuggestedScreening[];
