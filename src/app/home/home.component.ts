@@ -13,6 +13,7 @@ import { formatDistance } from 'date-fns'
 export class HomeComponent implements OnInit {
 
     constructor(public datastore: DatastoreService, private modalService: BsModalService) { }
+    myDate = new Date();
 
     helpers = {formatDistance}
     modalRef: BsModalRef;
