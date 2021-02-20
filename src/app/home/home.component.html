@@ -5,12 +5,10 @@
                 <img class="avatar__img" src="/assets/lilla.jpg" />
             </div>
             <svg viewBox="0 0 36 36" class="circular-chart">
-                <path class="circle"
-                  stroke-dasharray="93, 100"
-                  d="M18 2.0845
+                <path class="circle" stroke-dasharray="93, 100" d="M18 2.0845
                     a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              </svg>
+                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
         </div>
     </div>
     <div class="col-12 m-auto">
@@ -22,69 +20,71 @@
 
 <hr>
 
-<div class="h3-1">
-    Current screenings
-</div>
+<div class="p-4 bg-lightcoral">
+    <div class="h3-1">
+        Expired screenings
+    </div>
 
-<ng-template #modalTemplate>
-    <div class="modal-header">
-        <h4 class="modal-title pull-left">{{modalScreening.name}}</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body" *ngIf="isGlobal; else modalSuccess">
-        <img class="img-fluid" alt="Card image cap" [src]="modalScreening.image">
-        {{modalScreening.screeningInfo}}
-        <hr>
-        <div class="row">
-            <div class="col-6">
-                <a class="btn btn-primary btn-block" href="https://maps.google.com/?q=Macroklinika" >Navigate</a>
-            </div>
-            <div class="col-6">
-                <button class="btn btn-primary btn-block" (click)="modalSuccessFunction()">Check in</button>
-            </div>
+    <ng-template #modalTemplate>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">{{modalScreening.name}}</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-    </div>
-    <ng-template #modalSuccess>
-        <div class="modal-body">
-            <div>
-                <div class="text-center">
-                    <div class="col-8 mx-auto mb-5">
-                        <img class="img-fluid" src="/assets/achievement_titty_guardian.svg" />
-                    </div>
-                    <h4>
-                        Congratulation!
-                    </h4>
-                    <div>
-                        Complete 3 annual mammography screenings in a row
-                    </div>
+        <div class="modal-body" *ngIf="isGlobal; else modalSuccess">
+            <img class="img-fluid" alt="Card image cap" [src]="modalScreening.image">
+            {{modalScreening.screeningInfo}}
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <a class="btn btn-primary btn-block" href="https://maps.google.com/?q=Macroklinika">Navigate</a>
                 </div>
-            </div>
-            <div class="mt-auto">
-                <div (click)="modalSuccessFunction()">
-                    <button class="btn btn-primary btn-lg btn-block"  aria-label="Close"  (click)="modalRef.hide()">
-                        Awesome!
-                    </button>
+                <div class="col-6">
+                    <button class="btn btn-primary btn-block" (click)="modalSuccessFunction()">Check in</button>
                 </div>
             </div>
         </div>
+        <ng-template #modalSuccess>
+            <div class="modal-body">
+                <div>
+                    <div class="text-center">
+                        <div class="col-8 mx-auto mb-5">
+                            <img class="img-fluid" src="/assets/achievement_titty_guardian.svg" />
+                        </div>
+                        <h4>
+                            Congratulation!
+                        </h4>
+                        <div>
+                            Complete 3 annual mammography screenings in a row
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <div (click)="modalSuccessFunction()">
+                        <button class="btn btn-primary btn-lg btn-block" aria-label="Close" (click)="modalRef.hide()">
+                            Awesome!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
     </ng-template>
-</ng-template>
-
-<div *ngFor="let currentScreening of currentScreenings">
-    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand" (click)="openModal(currentScreening.screening, modalTemplate)">
-        <div class="card">
-            <img class="img-fluid" alt="Card image cap" [src]="currentScreening.screening.image">
-            <div class="card-body">
-                <h5 class="card-title">{{currentScreening.screening.name}}</h5>
-                <p class="card-text">Due in: {{helpers.formatDistance(currentScreening.date, now)}}</p>
+    <div *ngFor="let currentScreening of currentScreenings">
+        <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand"
+            (click)="openModal(currentScreening.screening, modalTemplate)">
+            <div class="card">
+                <img class="img-fluid" alt="Card image cap" [src]="currentScreening.screening.image">
+                <div class="card-body">
+                    <h5 class="card-title">{{currentScreening.screening.name}}</h5>
+                    <p class="card-text">Due in: {{helpers.formatDistance(currentScreening.date, now)}}</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div *ngIf="currentScreenings.length === 0 || currentScreenings == null" style="text-align: center;">
-        <p>Yay, you have no expired screenings!</p>
-        <img class="img-fluid" src="/assets/octopus.svg" />
+        <div *ngIf="currentScreenings.length === 0 || currentScreenings == null" style="text-align: center;">
+            <p>Yay, you have no expired screenings!</p>
+            <img class="img-fluid" src="/assets/octopus.svg" />
+        </div>
     </div>
 </div>
 
@@ -95,7 +95,8 @@
 </div>
 
 <div *ngFor="let nextScreening of nextScreenings">
-    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand" (click)="openModal(nextScreening.screening, modalTemplate)">
+    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand"
+        (click)="openModal(nextScreening.screening, modalTemplate)">
         <div class="card">
             <img class="card-img-top" alt="Card image cap" [src]="nextScreening.screening.image">
             <div class="card-body">
