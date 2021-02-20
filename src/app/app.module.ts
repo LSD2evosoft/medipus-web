@@ -16,7 +16,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BasicInfoComponent } from './basicinfo/basicinfo.component';
-
+import { ScreeningsComponent } from './screenings/screenings.component';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { BasicInfoComponent } from './basicinfo/basicinfo.component';
         ProfileComponent,
         ToplistComponent,
         FriendsComponent,
-        BasicInfoComponent
+        BasicInfoComponent,
+        ScreeningsComponent
     ],
     imports: [
         BrowserModule,
@@ -38,6 +40,7 @@ import { BasicInfoComponent } from './basicinfo/basicinfo.component';
         CollapseModule.forRoot(),
         BsDatepickerModule.forRoot(),
         TooltipModule.forRoot(),
+        TypeaheadModule.forRoot(),
         ModalModule.forRoot()
     ],
     providers: [],

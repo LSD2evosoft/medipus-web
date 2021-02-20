@@ -5,6 +5,7 @@
         "Toplist",
         "basicinfo",
         "codelyzer",
-        "predeploy"
+        "predeploy",
+        "typeahead"
     ]
 }

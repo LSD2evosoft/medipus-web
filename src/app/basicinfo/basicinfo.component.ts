@@ -18,7 +18,7 @@ export class BasicInfoComponent implements OnInit {
 
     ngOnInit(): void {
         const user = this.datastore.user;
-        this.birthDate = user.dateOfBirth;
+        this.birthDate = user.dateOfBirth ?? new Date(2000, 0, 1);
         this.sex = user.sex?.toString() ?? 'Female';
         this.weight = user.weight?.toString() ?? '65.0';
         this.height = user.height?.toString() ?? '170.0';

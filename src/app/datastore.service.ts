@@ -14,6 +14,24 @@ export class DatastoreService {
 
     constructor() {
 
+        this.screenings = [{
+            id: "screening1",
+            name: "Prostate screening",
+            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
+        }, {
+            id: "screening2",
+            name: "Breast cancer screening",
+            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
+        }, {
+            id: "screening3",
+            name: "Lung screening",
+            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
+        }, {
+            id: "screening4",
+            name: "Diabetes screening",
+            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
+        }];
+
         this.users = [
             {
                 id: '2d9f166b-276c-4f34-8c35-8632439e83ee',
@@ -109,5 +127,9 @@ export class DatastoreService {
         ];
 
         this.user = this.users[0];
+    }
+
+    private flatMap<TIn, TOut>(arr: TIn[], selector: ((a: TIn) => TOut[])): TOut[] {
+        return arr.reduce((acc, x) => acc.concat(selector(x)), []);
     }
 }
