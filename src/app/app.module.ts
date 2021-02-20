@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
         // ngx-bootstrap https://valor-software.com/ngx-bootstrap/#/documentation#getting-started
         BrowserAnimationsModule,
         BsDropdownModule.forRoot(),
+        CollapseModule.forRoot(),
         TooltipModule.forRoot(),
         ModalModule.forRoot()
     ],

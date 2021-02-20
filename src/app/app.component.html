@@ -1,24 +1,30 @@
-<nav>
-    <h2>Menu</h2>
-    <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/profile">Profile</a></li>
-        <li><a routerLink="/toplist">Toplist</a></li>
-    </ul>
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    
 
-    <!-- https://valor-software.com/ngx-bootstrap/#/dropdowns -->
-    <div class="btn-group" dropdown>
-        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-            aria-controls="dropdown-basic">
-            <span style="font-style: italic;">Fancy</span> menu <span class="caret"></span>
+    <div class="d-block d-sm-none w-100">
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">hamm
         </button>
-        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" routerLink="/">Home</a></li>
-            <li class="divider dropdown-divider"></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="/profile">Profile</a></li>
-            <li role="menuitem"><a class="dropdown-item" routerLink="/toplist">Toplist</a></li>
+        <div id="collapseBasic" [collapse]="!isCollapsed" [isAnimated]="true">
+            <button type="button" class="btn btn-primary btn-block" routerLink="/">Home</button>
+            <button type="button" class="btn btn-primary btn-block" routerLink="/profile">Profile</button>
+            <button type="button" class="btn btn-primary btn-block" routerLink="/toplist">Toplist</button>
+        </div>
+    </div>
+    <div class="d-none d-sm-block">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/toplist">Toplist</a>
+            </li>
         </ul>
     </div>
 </nav>
-
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
