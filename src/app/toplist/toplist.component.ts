@@ -29,11 +29,8 @@ export class ToplistComponent implements OnInit {
         }
         else {
             for (let friendId of this.datastore.user.friendIDs) {
-                for (let user of this.datastore.users) {
-                    if(friendId == user.id){
-                        topUsers.push(user);
-                    }
-                }
+                let friend = this.datastore.getUserById(friendId);
+                topUsers.push(friend);
             }
 
             topUsers.push(this.datastore.user);

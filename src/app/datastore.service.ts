@@ -110,4 +110,16 @@ export class DatastoreService {
 
         this.user = this.users[0];
     }
+
+    getUserById(id: string) {
+        return this.users.filter(item => item.id === id)[0];
+    }
+
+    getUserByUserName(userName: string) {
+        return this.users.filter(item => item.userName === userName)[0];
+    }
+
+    getUserByEmail(email: string) {
+        return this.users.filter(item => item.email === email)[0];
+    }
 }
