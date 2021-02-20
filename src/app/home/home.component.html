@@ -1,7 +1,7 @@
 <div class="row mt-4 d-flex">
     <div class="col-6 m-auto">
         <div class="avatar" routerLink="/profile">
-            <img class="avatar__img" src="https://www.mindmegette.hu/images/143/O/crop_201603091554_hamburger.jpg" />
+            <img class="avatar__img" src="/assets/lilla.jpg" />
         </div>
     </div>
     <div class="col-12 m-auto">
@@ -43,6 +43,10 @@
                 <button type="button" class="btn btn-primary" (click)="openModal(expiredScreening.screening, modalTemplate)">Details</button>
             </div>
         </div>
+    </div>
+    <div *ngIf="expiredScreenings.length === 0 || expiredScreenings == null" style="text-align: center;">
+        <p>Yay, you have no expired screenings!</p>
+        <img class="img-fluid" src="/assets/octopus.svg" />
     </div>
 </div>
 

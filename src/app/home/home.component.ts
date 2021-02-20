@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     
     ngOnInit(): void {
       this.now = new Date();
-      this.expiredScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date < this.now);
+      this.expiredScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date < this.now) ?? null;
       this.nextScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date >= this.now);
     }
 }
