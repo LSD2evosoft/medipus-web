@@ -1,7 +1,8 @@
 <p>This is the Toplist component!</p>
-
-<button class="btn btn-primary" (click) = "getToplist(true)">Global</button>
-<button class="btn btn-primary" (click) = "getToplist(false)">Friends</button>
+<div class="btn-group mb-4">
+    <button class="btn btn-primary btn-lg" (click) = "getToplist(true)">Global</button>
+    <button class="btn btn-primary btn-lg" (click) = "getToplist(false)">Friends</button>
+</div>
 
 <div *ngIf="isGlobal; else friendList">
     <h2>Top users</h2>
@@ -10,11 +11,13 @@
     <h2>Top friends</h2>
 </ng-template>
 
-<div *ngFor="let topUser of topList" class="toplistCard">
-    <div *ngIf="topUser[0].id == this.datastore.user.id; else others">
-        <h4 class="text-primary">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h4>
+<div *ngFor="let topUser of topList" class="card my-4">
+    <div class="card-body bg-warning" *ngIf="topUser[0].id == this.datastore.user.id; else others">
+        <h5 class="card-title mb-0">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h5>
     </div>
     <ng-template #others>
-        <h4>{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h4>
+        <div class="card-body">
+            <h5 class="card-title mb-0">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h5>
+        </div>
     </ng-template>
 </div>

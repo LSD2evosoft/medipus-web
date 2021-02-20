@@ -1,20 +1,44 @@
 <p>This is the Friends component!</p>
 
 <h2>Add friend</h2>
-<div>
-    <input type="text" placeholder="Name or email" class="form-control" [(ngModel)]="newFriendUserName">
+<div class="form-row">
+    <div class="col">
+        <input type="text" placeholder="Name or email" class="form-control" [(ngModel)]="newFriendUserName">
+    </div>
     <button class="btn btn-primary" (click)="addFriend()">Add friend</button>
 </div>
-<h2>Your friends</h2>
+<h2 class="mt-5">Your friends</h2>
 <div *ngFor="let friend of getFriends()">
-    <div>{{friend.name}}
-        <button class="btn btn-primary" (click)="removeFriend(friend.id)">Remove</button>
+    <div class="col-6 col-sm-4 col-md-3">
+        <div class="avatar" routerLink="/profile">
+            <div class="avatar__container">
+                <img class="avatar__img" src="/assets/lilla.jpg" />
+            </div>
+        </div>
+        <div class="text-center">
+            <h5 class="mt-2">
+                {{friend.name}} 
+            </h5>
+            <button class="btn btn-light btn-sm mx-auto" (click)="removeFriend(friend.id)">Remove</button>
+        </div>
     </div>
 </div>
-<h2>Friend requests</h2>
+<h2 class="mt-5">Friend requests</h2>
 <div *ngFor="let request of getFriendRequests()">
-    <div>{{request.name}}
-        <button class="btn btn-primary" (click)="approveRequest(request.id)">Approve</button>
-        <button class="btn btn-primary" (click)="denyRequest(request.id)">Deny</button>
+    
+    <div class="col-6 col-sm-4 col-md-3">
+        <div class="avatar" routerLink="/profile">
+            <div class="avatar__container">
+                <img class="avatar__img" src="/assets/lilla.jpg" />
+            </div>
+        </div>
+        <div class="text-center">
+            <h5 class="mt-2">
+                {{request.name}} 
+            </h5>
+            <button class="btn btn-primary btn-sm mr-2" (click)="approveRequest(request.id)">Approve</button>
+            <button class="btn btn-light btn-sm" (click)="denyRequest(request.id)">Deny</button>
+        </div>
     </div>
 </div>
+<hr>
