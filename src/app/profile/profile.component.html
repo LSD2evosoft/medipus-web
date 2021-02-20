@@ -1,11 +1,19 @@
-<div class="row mt-4 d-flex">
-    <div class="col-6 m-auto">
+<div class="row mt-5 d-flex">
+    <div class="col-4 m-auto">
         <div class="avatar" routerLink="/profile">
-            <img class="avatar__img" src="https://www.mindmegette.hu/images/143/O/crop_201603091554_hamburger.jpg" />
+            <div class="avatar__container">
+                <img class="avatar__img" src="/assets/lilla.jpg" />
+            </div>
+            <svg viewBox="0 0 36 36" class="circular-chart">
+                <path class="circle" stroke-dasharray="93, 100" d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <text _ngcontent-oau-c76="" x="0.5" y="4" font-size="2.8pt" class="percentage">95%</text>
+            </svg>
         </div>
     </div>
     <div class="col-12 m-auto">
-        <h4 class="text-center mt-2">
+        <h4 class="text-center mt-4">
             {{datastore.user.name}}
         </h4>
     </div>
@@ -22,6 +30,6 @@
     <div class="card-body">
         <h5 class="card-title">You probably need this treatment</h5>
         <p class="card-text">{{screening.screening.screeningInfo}}</p>
-        <a href="#" class="btn btn-primary">More info</a>
+        <a class="btn btn-primary">More info</a>
     </div>
 </div>

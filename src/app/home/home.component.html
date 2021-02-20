@@ -2,7 +2,7 @@
     <div class="col-4 m-auto">
         <div class="avatar" routerLink="/profile">
             <div class="avatar__container">
-                <img class="avatar__img" src="/assets/lilla.jpg" />
+                <img class="avatar__img" src={{datastore.user.profilePictureUrl}} />
             </div>
             <svg viewBox="0 0 36 36" class="circular-chart">
                 <path class="circle" stroke-dasharray="93, 100" d="M18 2.0845
@@ -70,18 +70,18 @@
             </div>
         </ng-template>
     </ng-template>
-    <div *ngFor="let currentScreening of currentScreenings">
-        <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand"
-            (click)="openModal(currentScreening.screening, modalTemplate)">
+    <div *ngFor="let expiredScreening of expiredScreenings">
+        <div class="col-md-3 col-sm-6 col-10 mx-auto mb-4 cursor-hand"
+            (click)="openModal(expiredScreening.screening, modalTemplate)">
             <div class="card">
-                <img class="img-fluid" alt="Card image cap" [src]="currentScreening.screening.image">
+                <img class="img-fluid" alt="Card image cap" [src]="expiredScreening.screening.image">
                 <div class="card-body">
-                    <h5 class="card-title">{{currentScreening.screening.name}}</h5>
-                    <p class="card-text">Due in: {{helpers.formatDistance(currentScreening.date, now)}}</p>
+                    <h5 class="card-title">{{expiredScreening.screening.name}}</h5>
+                    <p class="card-text">Expired: {{helpers.formatDistance(expiredScreening.date, now)}} ago</p>
                 </div>
             </div>
         </div>
-        <div *ngIf="currentScreenings.length === 0 || currentScreenings == null" style="text-align: center;">
+        <div *ngIf="expiredScreenings.length === 0 || expiredScreenings == null" style="text-align: center;">
             <p>Yay, you have no expired screenings!</p>
             <img class="img-fluid" src="/assets/octopus.svg" />
         </div>
@@ -95,7 +95,7 @@
 </div>
 
 <div *ngFor="let nextScreening of nextScreenings">
-    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4 cursor-hand"
+    <div class="col-md-3 col-sm-6 col-10 mx-auto mb-4 cursor-hand"
         (click)="openModal(nextScreening.screening, modalTemplate)">
         <div class="card">
             <img class="card-img-top" alt="Card image cap" [src]="nextScreening.screening.image">

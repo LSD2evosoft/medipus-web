@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-12 col-sm-6 col-md-4 mb-4" *ngFor="let screening of screenings">
         <div class="card">
-            <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
+            <img class="card-img-top" [src]="screening.image"
                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{screening.name}}</h5>

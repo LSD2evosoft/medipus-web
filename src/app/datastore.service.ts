@@ -17,25 +17,28 @@ export class DatastoreService {
         this.screenings = [{
             id: "screening1",
             name: "Prostate screening",
-            screeningInfo: "Screening for prostate cancer is done to find evidence of cancer in otherwise healthy adults. Two tests are commonly used to screen for prostate cancer: Digital rectal examination (DRE). A DRE is a test in which the doctor inserts a gloved, lubricated finger into the rectum and feels the surface of the prostate through the bowel wall for any irregularities. PSA blood test. There is controversy about using the PSA test to look for prostate cancer in people with no symptoms of the disease. On the one hand, the PSA test is useful for detecting early-stage prostate cancer."
+            screeningInfo: "Screening for prostate cancer is done to find evidence of cancer in otherwise healthy adults. Two tests are commonly used to screen for prostate cancer: Digital rectal examination (DRE). A DRE is a test in which the doctor inserts a gloved, lubricated finger into the rectum and feels the surface of the prostate through the bowel wall for any irregularities. PSA blood test. There is controversy about using the PSA test to look for prostate cancer in people with no symptoms of the disease. On the one hand, the PSA test is useful for detecting early-stage prostate cancer.",
+            image: "https://www.health.harvard.edu/media/content/images/p1_DrConsult_N1708_ts174807703.jpg"
         }, {
             id: "screening2",
-            name: "Breast cancer screening",
+            name: "Mammography",
             screeningInfo: "You will stand in front of a special X-ray machine. A technologist will place your breast on a plastic plate. Another plate will firmly press your breast from above. The plates will flatten the breast, holding it still while the X-ray is being taken. You will feel some pressure. The steps are repeated to make a side view of the breast. The other breast will be X-rayed in the same way. You will then wait while the technologist checks the four X-rays to make sure the pictures do not need to be re-done.",
             image: "https://media.istockphoto.com/photos/solving-womens-health-issues-picture-id1128870494?k=6&m=1128870494&s=612x612&w=0&h=Ci26BQ_br0kC_lNCimXk_wtQvvwNgRH4JfrZNyJch6Q="
         }, {
             id: "screening3",
             name: "Lung screening",
             screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   ",
-            image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/GettyImages-1167819581.jpg"
+            image: "https://www.stamfordhealth.org/app/files/public/LungXRayDoctorFullSize.jpg?size="
         }, {
             id: "screening4",
             name: "Diabetes screening",
-            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
+            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   ",
+            image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/GettyImages-1167819581.jpg"
         }, {
             id: "screening5",
             name: "Cholesterol check",
-            screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test."            
+            screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test.",
+            image: "https://www.wellbeingpeople.com/app/uploads/2017/06/Product-Gallery-Image-Cholesterol-Blood-Glucose-Screening-1.jpg"         
         }];
 
         this.users = [
@@ -45,21 +48,22 @@ export class DatastoreService {
                 userName: 'lilla',
                 email: 'lilla@email.hu',
                 healthScore: 95,
+                profilePictureUrl: "/assets/lilla.jpg",
                 friendIDs: ['31c4e479-b825-4f80-abe8-89ce3c189f1e'],
                 receivedRequests: ['7aa37440-6b02-425f-be1c-b56f661aaacc'],
                 suggestedScreenings: [
                     {
                         id: '72f68663-9558-4d18-a395-c9c137f983a0',
                         screening: this.screenings[1],
-                        date: new Date('2021-03-15')
+                        date: new Date('2020-08')
                     }, {
                         id: 'fefe0587-4eb1-4454-827f-bee2fd055649',
                         screening: this.screenings[2],
-                        date: new Date('2021-05')
+                        date: new Date('2021-03-15')
                     }, {
                         id: 'fefe0587-4eb1-4454-827f-bee2fd055649',
                         screening: this.screenings[3],
-                        date: new Date('2021-05')
+                        date: new Date('2021-09')
                     }
                 ]
             }, {

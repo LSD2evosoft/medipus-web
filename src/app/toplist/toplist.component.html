@@ -1,5 +1,4 @@
-<p>This is the Toplist component!</p>
-<div class="btn-group mb-4">
+<div class="btn-group mb-4" style="margin-top: 10px;">
     <button class="btn btn-primary btn-lg" (click) = "getToplist(true)">Global</button>
     <button class="btn btn-primary btn-lg" (click) = "getToplist(false)">Friends</button>
 </div>
@@ -13,11 +12,11 @@
 
 <div *ngFor="let topUser of topList" class="card my-4">
     <div class="card-body bg-warning" *ngIf="topUser[0].id == this.datastore.user.id; else others">
-        <h5 class="card-title mb-0">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h5>
+        <h5 class="card-title mb-0">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} %</h5>
     </div>
     <ng-template #others>
         <div class="card-body">
-            <h5 class="card-title mb-0">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} HP</h5>
+            <h5 class="card-title mb-0">{{topUser[1]}}. {{topUser[0].name}} -  {{topUser[0].healthScore}} %</h5>
         </div>
     </ng-template>
 </div>
