@@ -26,7 +26,8 @@ export class DatastoreService {
         }, {
             id: "screening3",
             name: "Lung screening",
-            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   "
+            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   ",
+            image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/GettyImages-1167819581.jpg"
         }, {
             id: "screening4",
             name: "Diabetes screening",
@@ -34,8 +35,7 @@ export class DatastoreService {
         }, {
             id: "screening5",
             name: "Cholesterol check",
-            screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test.",
-            image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/GettyImages-1167819581.jpg"
+            screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test."            
         }];
 
         this.users = [
