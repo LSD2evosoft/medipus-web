@@ -1,14 +1,16 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-    
 
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <div class="d-block d-sm-none w-100">
         <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">hamm
         </button>
+
         <div id="collapseBasic" [collapse]="!isCollapsed" [isAnimated]="true">
             <button type="button" class="btn btn-primary btn-block" routerLink="/">Home</button>
             <button type="button" class="btn btn-primary btn-block" routerLink="/profile">Profile</button>
             <button type="button" class="btn btn-primary btn-block" routerLink="/toplist">Toplist</button>
+            <button type="button" class="btn btn-primary btn-block" routerLink="/basic-info">Basic info</button>
+            <button type="button" class="btn btn-primary btn-block" routerLink="/friends">Friends</button>
         </div>
     </div>
     <div class="d-none d-sm-block">

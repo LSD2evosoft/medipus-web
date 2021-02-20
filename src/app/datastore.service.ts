@@ -65,7 +65,7 @@ export class DatastoreService {
             }, {
                 id: '03e5e719-0142-4a6c-9957-b0b67bf806ac',
                 name: 'Árvíztűrő Tükörfúró Jani',
-                userName: 'janu',
+                userName: 'jani',
                 email: 'jani@tukorfuro.hu',
                 healthScore: 5,
                 suggestedScreenings: [
@@ -88,10 +88,14 @@ export class DatastoreService {
             }, {
                 id: 'e041da87-6d66-4deb-b6cd-d2473cc86a06',
                 name: 'Joshi Bharat',
+                userName: "joshi",
+                email: 'joshi@tukorfuro.hu',
                 healthScore: 1,
             }, {
                 id: 'c75c36f7-8c5c-4095-b1ed-292b2f16a225',
                 name: 'Józsi Bharat',
+                userName: "jozsi",
+                email: 'jozsi@tukorfuro.hu',
                 healthScore: 2,
             } as any
         ];

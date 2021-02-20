@@ -1,0 +1,28 @@
+<p>basicinfo works!</p>
+
+<p>Birth date</p>
+<div class="row">
+    <div class="col-xs-12 col-md-5 col-lg-4 form-group">
+        <input class="form-control" bsDatepicker #datepickerYMD="bsDatepicker" bsDatepicker
+            [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [bsValue]="birthDate">
+    </div>
+    <div class="col-xs-12 col-12 col-md-3 form-group">
+        <button class="btn btn-success" (click)="datepickerYMD.toggle()" [attr.aria-expanded]="datepickerYMD.isOpen"
+            type="button">Select date</button>
+    </div>
+</div>
+
+Sex
+<input type="text" [(ngModel)]="sex" />
+<br />
+
+Height
+<input type="text" [(ngModel)]="height" /> cm
+<br />
+
+Weight
+<input type="text" [(ngModel)]="weight" /> kg
+<br />
+
+<br />
+<button class="btn btn-primary" type="submit" (click)="save()">Save</button>

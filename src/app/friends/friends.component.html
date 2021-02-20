@@ -1,0 +1,12 @@
+<p>This is the Friends component!</p>
+
+<h2>Add friend</h2>
+<div>
+    <input type="text" placeholder="Name or email" class="form-control" [(ngModel)]="newFriendUserName">
+    <button class="btn btn-primary" (click)="addFriend()">Add friend</button>
+</div>
+<h2>Your friends</h2>
+<div *ngFor="let friend of friends">
+    <div>{{friend.name}}<button class="btn btn-primary" (click)="removeFriend(friend.id)">Remove</button></div>
+</div>
+<h2>Friend requests</h2>
