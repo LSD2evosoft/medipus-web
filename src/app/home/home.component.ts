@@ -3,6 +3,7 @@ import { DatastoreService } from '../datastore.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Screening } from '../model/screening';
 import { SuggestedScreening } from '../model/suggestedScreening';
+import { formatDistance } from 'date-fns'
 
 @Component({
     selector: 'app-home',
@@ -15,10 +16,12 @@ export class HomeComponent implements OnInit {
     myDate = new Date();
     myYear = new Date().getFullYear();
 
+    helpers = {formatDistance}
     modalRef: BsModalRef;
     expiredScreenings: SuggestedScreening[];
     nextScreenings: SuggestedScreening[];
     modalScreening: Screening;
+    now: Date;
    
     openModal(screening: Screening, template: TemplateRef<any>) {
       this.modalRef = this.modalService.show(template);
@@ -26,8 +29,8 @@ export class HomeComponent implements OnInit {
     }
     
     ngOnInit(): void {
-      const now = new Date();
-      this.expiredScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date < now);
-      this.nextScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date >= now);
+      this.now = new Date();
+      this.expiredScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date < this.now);
+      this.nextScreenings = this.datastore.user.suggestedScreenings.filter(item => item.date >= this.now);
     }
 }

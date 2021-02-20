@@ -14,36 +14,31 @@
 
 <hr>
 
-<div class="bg-lightcoral">
-    <div class="h3-1">
-        Expired screenings
+<h3>Expired screenings</h3>
+
+<ng-template #modalTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{modalScreening.name}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-    <div class="row" *ngFor="let screening of datastore.user.suggestedScreenings">
-        <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
-            <div class="card">
-                <img class="card-img-top"
-                    src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-                    alt="Card image cap">
-                <div class="card-body" *ngFor="let expiredScreening of expiredScreenings">
-                    <h5 class="card-title">{{screening.screening.name}}</h5>
-                    <p class="card-text">Expired on: {{myYear - expiredScreening.date.getFullYear()}}</p>
-                    <button type="button" class="btn btn-primary" (click)="openModal(expiredScreening.screening, template)">Details</button>
-                </div>
-                <ng-template #template>
-                    <div class="modal-header">
-                        <h4 class="modal-title pull-left">{{screening.screening.name}}</h4>
-                        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="img-fluid"
-                            src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
-                            alt="Card image cap">
-                        {{screening.screening.screeningInfo}}
-                        <button></button>
-                    </div>
-                </ng-template>
+    <div class="modal-body">
+        <img class="img-fluid" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
+            alt="Card image cap">
+        {{modalScreening.screeningInfo}}
+    </div>
+</ng-template>
+
+<div *ngFor="let expiredScreening of expiredScreenings">
+    <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
+        <div class="card">
+            <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{expiredScreening.screening.name}}</h5>
+                <p class="card-text">Expired: {{helpers.formatDistance(expiredScreening.date, now)}} ago</p>
+                <button type="button" class="btn btn-primary" (click)="openModal(expiredScreening.screening, modalTemplate)">Details</button>
             </div>
         </div>
     </div>
@@ -51,19 +46,17 @@
 
 <hr>
 
+<h3>Next screenings</h3>
 
-<div class="h3-1">
-    Next screenings
-</div>
-<div class="row" *ngFor="let nextScreening of nextScreenings">
+<div *ngFor="let nextScreening of nextScreenings">
     <div class="col-md-3 col-sm-6 col-8 mx-auto mb-4">
         <div class="card">
             <img class="card-img-top" src="https://i.pinimg.com/originals/8d/20/81/8d2081bfe6b37850990126351a1c556a.png"
                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{nextScreening.screening.name}}</h5>
-                <p class="card-text">Due in: {{nextScreening.date}}</p>
-                <button type="button" class="btn btn-primary" (click)="openModal(nextScreening.screening, template)">Details</button>
+                <p class="card-text">Due in: {{helpers.formatDistance(now, nextScreening.date)}}</p>
+                <button type="button" class="btn btn-primary" (click)="openModal(nextScreening.screening, modalTemplate)">Details</button>
             </div>
             <ng-template #template>
                 <div class="modal-header">
