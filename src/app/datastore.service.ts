@@ -129,7 +129,19 @@ export class DatastoreService {
         this.user = this.users[0];
     }
 
-    private flatMap<TIn, TOut>(arr: TIn[], selector: ((a: TIn) => TOut[])): TOut[] {
+    getUserById(id: string) {
+        return this.users.filter(item => item.id === id)[0];
+    }
+
+    getUserByUserName(userName: string) {
+        return this.users.filter(item => item.userName === userName)[0];
+    }
+
+    getUserByEmail(email: string) {
+        return this.users.filter(item => item.email === email)[0];
+    }
+
+    flatMap<TIn, TOut>(arr: TIn[], selector: ((a: TIn) => TOut[])): TOut[] {
         return arr.reduce((acc, x) => acc.concat(selector(x)), []);
     }
 }

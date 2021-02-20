@@ -1,4 +1,3 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { DatastoreService } from '../datastore.service';
 import { User } from '../model/user';
@@ -24,11 +23,8 @@ export class FriendsComponent implements OnInit {
     getFriends(): User[] {
         let friends: User[] = [];
         for (let friendId of this.user.friendIDs) {
-            for (let user of this.datastore.users) {
-                if(friendId == user.id) {
-                    friends.push(user);
-                }
-            }
+            let friend = this.datastore.getUserById(friendId);
+            friends.push(friend);
         }
 
         return friends.sort((a,b) => a.name.localeCompare(b.name));
@@ -37,11 +33,8 @@ export class FriendsComponent implements OnInit {
     getFriendRequests(): User[] {
         let requests: User[] = [];
         for (let requestId of this.user.receivedRequests) {
-            for (let user of this.datastore.users) {
-                if(requestId == user.id) {
-                    requests.push(user);
-                }
-            }
+            let friendRequest = this.datastore.getUserById(requestId);
+            requests.push(friendRequest);
         }
 
         return requests.sort((a,b) => a.name.localeCompare(b.name));
@@ -59,10 +52,20 @@ export class FriendsComponent implements OnInit {
         let friend = this.friends.filter((item) => item.userName == this.newFriendUserName || item.email == this.newFriendUserName)[0];
 
         if(friend == undefined) {
-            friend = this.datastore.users.filter((item) => item.userName == this.newFriendUserName || item.email == this.newFriendUserName)[0];
-            if(friend != undefined && confirm('Are you sure you want to add ' + this.newFriendUserName + ' to your friends?')) {
-                this.user.friendIDs.push(friend.id);
+            let user = this.datastore.getUserByUserName(this.newFriendUserName);
+            if(user == undefined){
+                user = this.datastore.getUserByEmail(this.newFriendUserName);
+            }
+            if(user != undefined && confirm('Are you sure you want to add ' + this.newFriendUserName + ' to your friends?')) {
+                if(this.user.sentRequests == undefined){
+                    this.user.sentRequests = [user.id];
+                }
+                else if(!this.user.sentRequests.some(item => item == user.id) &&
+                        !this.user.receivedRequests.some(item => item == user.id)) {
+                    this.user.sentRequests.push(user.id);
+                }
                 this.friends = this.getFriends();
+                console.log(this.user.sentRequests);
             }
         }
     }
@@ -70,9 +73,15 @@ export class FriendsComponent implements OnInit {
     approveRequest(id: string): void {
         this.user.receivedRequests = this.user.receivedRequests.filter(item => item != id);
         this.user.friendIDs.push(id);
+
+        let request = this.datastore.getUserById(id);
+        request.sentRequests = request.sentRequests.filter(item => item != id);
     }
 
     denyRequest(id: string): void {
         this.user.receivedRequests = this.user.receivedRequests.filter(item => item != id);
+
+        let request = this.datastore.getUserById(id);
+        request.sentRequests = request.sentRequests.filter(item => item != id);
     }
 }
