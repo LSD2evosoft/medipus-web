@@ -3,7 +3,7 @@ import { DatastoreService } from '../datastore.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Screening } from '../model/screening';
 import { SuggestedScreening } from '../model/suggestedScreening';
-import { formatDistance } from 'date-fns'
+import { formatDistance } from 'date-fns';
 
 @Component({
     selector: 'app-home',
