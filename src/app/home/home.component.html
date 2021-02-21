@@ -34,7 +34,10 @@
         </div>
         <div class="modal-body" *ngIf="isGlobal; else modalSuccess">
             <img class="img-fluid" alt="Card image cap" [src]="modalScreening.image">
-            {{modalScreening.screeningInfo}}
+            <span
+                style="display: inline-block; margin-left: 0.5em; margin-right: 0.5em; margin-top: 1.5em; margin-bottom:0.5em;">
+                {{modalScreening.screeningInfo}}
+            </span>
             <hr>
             <div class="row">
                 <div class="col-6">
@@ -49,13 +52,13 @@
             <div class="modal-body">
                 <div>
                     <div class="text-center">
-                        <div class="col-8 mx-auto mb-5">
+                        <div class="col-8 mx-auto mb-5" style="margin-top: 1em; margin-bottom: -0.5em;">
                             <img class="img-fluid" src="/assets/achievement_titty_guardian.svg" />
                         </div>
                         <h4>
                             Congratulation!
                         </h4>
-                        <div>
+                        <div style="margin-bottom: 2em;">
                             You completed 3 annual mammography screenings in a row and earned the <b>Titty Guardian</b> achievement!
                         </div>
                         <hr>
