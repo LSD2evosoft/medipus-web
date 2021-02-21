@@ -23,22 +23,22 @@ export class DatastoreService {
             id: "screening2",
             name: "Mammography",
             screeningInfo: "You will stand in front of a special X-ray machine. A technologist will place your breast on a plastic plate. Another plate will firmly press your breast from above. The plates will flatten the breast, holding it still while the X-ray is being taken. You will feel some pressure. The steps are repeated to make a side view of the breast. The other breast will be X-rayed in the same way. You will then wait while the technologist checks the four X-rays to make sure the pictures do not need to be re-done.",
-            image: "https://media.istockphoto.com/photos/solving-womens-health-issues-picture-id1128870494?k=6&m=1128870494&s=612x612&w=0&h=Ci26BQ_br0kC_lNCimXk_wtQvvwNgRH4JfrZNyJch6Q="
+            image: "https://media.istockphoto.com/photos/solving-womens-health-issues-picture-id1128870494"
         }, {
             id: "screening3",
             name: "Lung screening",
-            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   ",
-            image: "https://www.stamfordhealth.org/app/files/public/LungXRayDoctorFullSize.jpg?size="
+            screeningInfo: "During lung screening, you lie on your back on a long table. The doctor will move to a separate room where he or she can still see you and talk with you. You'll have to lie very still as the table slides through the machine that creates the images of your lungs. When the machine is ready to start the scan, you'll be asked to hold your breath briefly to create a clear picture of your lungs. The table will move through the machine as the images are created. The machine may make knocking or clicking noises.",
+            image: "https://www.stamfordhealth.org/app/files/public/LungXRayDoctorFullSize.jpg"
         }, {
             id: "screening4",
             name: "Diabetes screening",
-            screeningInfo: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero ex voluptatibus dicta dolore ullam deleniti eos temporibus, hic non.   ",
-            image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/GettyImages-1167819581.jpg"
+            screeningInfo: "To diagnose diabetes, a health care professional will typically use one of four blood screening tests to measure your blood sugar levels. The higher the levels, the more likely a you are to get a positive result. The screening test is usually performed twice on two different days to confirm the initial result. Testing can help you detect the disease early so you and your doctor can develop a treatment plan to help manage your condition.",
+            image: "https://www.wellbeingpeople.com/app/uploads/2017/06/Product-Gallery-Image-Cholesterol-Blood-Glucose-Screening-1.jpg"
         }, {
             id: "screening5",
             name: "Cholesterol check",
             screeningInfo: "High cholesterol does not cause symptoms. You can only find out if you have it from a blood test. Your GP might suggest having a test if they think your cholesterol level could be high. This may because of your age, weight or another condition you have (like high blood pressure or diabetes). There are 2 ways of having a cholesterol test: Taking blood from your arm or Finger-prick test.",
-            image: "https://www.wellbeingpeople.com/app/uploads/2017/06/Product-Gallery-Image-Cholesterol-Blood-Glucose-Screening-1.jpg"         
+            image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/GettyImages-1167819581.jpg"
         }];
 
         this.users = [
